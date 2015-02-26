@@ -1,0 +1,8 @@
+parameters:
+  drupal.driver.drupal_remote_api.class: Kirschbaum\DrupalBehatRemoteAPIDriver\Drivers\DrupalBehatRemoteAPIDriver
+
+services:
+  drupal.driver.drupal_remote_api:
+    class: %drupal.driver.drupal_remote_api.class%
+    tags:
+      - { name: drupal.drupal_remote_api, alias: drupal_remote_api }

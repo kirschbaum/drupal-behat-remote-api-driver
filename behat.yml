@@ -1,0 +1,40 @@
+default:
+    filters:
+    formatter:
+            name:                       pretty
+            parameters:
+                decorated:              true
+                verbose:                false
+                time:                   true
+                language:               en
+                output_path:            null
+                multiline_arguments:    true
+    paths:
+        features: features
+        bootstrap: features/bootstrap
+    context:
+      parameters:
+        base_url: 'http://drupalsite.loc:8000'
+    extensions:
+      Behat\MinkExtension\Extension:
+        goutte:
+          guzzle_parameters:
+            curl.options:
+              CURLOPT_SSL_VERIFYPEER: false
+              CURLOPT_CERTINFO: false
+              CURLOPT_TIMEOUT: 120
+            ssl.certificate_authority: false
+        selenium2: ~
+        base_url: 'http://drupalsite.loc:8000'
+      Kirschbaum\DrupalBehatRemoteAPIDriver\DrupalRemoteExtension:
+        blackbox: ~
+        api_driver: 'drupal_remote_api'
+        drupal_remote_api:
+          login_username: 'username'
+          login_password: 'password'
+          #request_cookie: 'cookie_name=value'
+          #custom_formatter_class: 'Acme\CustomDrupalFormatter'
+        default_driver: 'drupal_remote_api'
+        region_map:
+          left sidebar: "#sidebar-first"
+          content: "#content"
