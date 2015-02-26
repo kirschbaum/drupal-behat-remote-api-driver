@@ -18,7 +18,7 @@
         "symfony/process": ">=2.3",
         "symfony/event-dispatcher": ">=2.3",
         "guzzle/guzzle":   "~3.7",
-        "vlucas/phpdotenv": "1.0.6",
+        "vlucas/phpdotenv": "dev-master",
         "behat/mink": "1.6.*@dev",
         "behat/mink-goutte-driver": "1.1.*@dev",
         "behat/mink-selenium2-driver": "1.2.*@dev",
