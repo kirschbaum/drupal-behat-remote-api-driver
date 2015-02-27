@@ -15,7 +15,7 @@ Full documentation is coming soon.
 
 ## Testing Drupal Sites
 
-Important: The remote API driver (this package) only needs to be installed on the site where tests will be initiated. The actual sites you will be testing do not require the driver. Instead, they will require the Drupal Remote API Client module to be installed and configured.
+Documentation is coming soon.
 
 
 ## Features 
