@@ -1,6 +1,8 @@
 
 ## Drupal Remote API Driver
 
+[![Build Status](https://travis-ci.org/kirschbaum/drupal-behat-remote-api-driver.svg?branch=master)](https://travis-ci.org/kirschbaum/drupal-behat-remote-api-driver)
+
 The remote API driver extends the popular [Drupal Extention](https://github.com/jhedstrom/drupalextension) library to support running authenticated Behat tests against remote Drupal sites. Please note that there are two main components to this project:
 
 1. The Drupal Remote API Driver - This extends the existing functionality of the drupalextention project and translates supported steps (e.g. create nodes, users, etc.) into appropriate REST requests to the remote Drupal site. See "currently supported features" below. This component is only required on the site where tests will be initiated.
