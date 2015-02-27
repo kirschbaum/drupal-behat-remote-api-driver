@@ -10,3 +10,9 @@ before_script:
   - travis_retry composer install --prefer-source --no-interaction --dev
 
 script: phpunit
+
+env:
+  global:
+    - DRUPAL_REMOTE_CLIENT_URL=http://drupalsite.loc:8000
+    - DRUPAL_REMOTE_CLIENT_USERNAME=username
+    - DRUPAL_REMOTE_CLIENT_PASSWORD=password
