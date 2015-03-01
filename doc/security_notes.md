@@ -11,3 +11,4 @@ Here are some things you should consider:
 * Limit or prevent use of the tool on production websites (e.g. only perform destructive tests on staging or pre-production environments, disabling the client module on production).
 * If you plan to store credentials, be sure to encrypt them.
 * Create a user role blacklist (preventing certain roles from being assigned by the tool).
+* Enable the feature on the client module that requires a custom regex pattern be matched on the username prior to attempting remote user login.
