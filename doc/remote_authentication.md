@@ -3,7 +3,7 @@
 
 Often times pre-production projects are hosted behind a basic auth username and password. You can provide the driver with these credentials in the behat.yml file as part of the URL. See the "base_url" setting.
 
-```
+```yml
 default:
     paths:
         features: features
