@@ -81,4 +81,4 @@ bin/behat -di
 It may be possible to add this library to an existing project. The feasibility mostly depends on what version of behat and drupalextention you are already running. This remote API libarary currently requires Behat v2 DrupalExtention v1.
 
 ### The Remote Client
-In order for this to work with your remote Drupla site, you'll need to install and configure the [Behat Drupal Remote API Client](https://github.com/kirschbaum/drupal-behat-remote-api-client). Instructions coming soon.
+In order for this to work with your remote Drupla site, you'll need to install and configure the [Behat Drupal Remote API Client](https://github.com/kirschbaum/drupal-behat-remote-api-client) module on each of remote Drupal sites you plan to test. Instructions coming soon.
