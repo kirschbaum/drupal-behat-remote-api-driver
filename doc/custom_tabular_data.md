@@ -9,7 +9,7 @@ First, we want the tester to be able to provide us with this custom data per fie
 
 Example 1:
 
-```
+```yml
 Given the fieldset "custom_field_1" with the options:
       | OPTION          | VALUE     |
       | autoplay        | 1         |
@@ -20,7 +20,7 @@ Given the fieldset "custom_field_1" with the options:
 
 Example 2:
 
-```
+```yml
 Given the fieldset "field_1" with the tabs:
       | TAB TITLE             | TABLE BODY                             | 
       | A Great Title!        | <p>A bunch of awesome body text</p>    | 
