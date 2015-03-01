@@ -100,3 +100,75 @@ In order for the library to know to include your custom formatter we need to add
         default_driver: 'drupal_remote_api'
 
 ```
+
+### Example Use Case
+
+Let's use the first example above. Here is what the test might look like:
+
+```yml
+Given the fieldset "custom_field_1" with the options:
+      | OPTION          | VALUE     |
+      | autoplay        | 1         |
+      | autoload        | 1         |
+      | another         | null      |
+      | even_more       | null      |
+
+Then I am viewing an "Article" node:
+      | title                | A great Title                   |
+      | my_subtitle          | A great subtitle                |
+      | my_event_description | A great event description here. |
+      | custom_field_1       | Fieldset                        |
+
+```
+
+The title, subtitle, and event description would work fine out of the box. But custom_field_1 and all of it's columns need a formatter.
+
+```php
+<?php namespace DrupalRemoteAPI;
+
+use Kirschbaum\DrupalBehatRemoteAPIDriver\CustomFormatterInterface;
+
+class FieldFormatter implements CustomFormatterInterface {
+
+    /**
+     * Process custom Drupal data formats
+     *
+     * @param $info The field info for the current field in question.
+     * @param $new_entity The node object being built up and formatted prior to the request.
+     * @param $param The field machine name.
+     * @param $column The first defined column for the field in question.
+     * @param $value The value for the field in question.
+     * @param $custom_data_tables Array of table objects added by custom steps.
+     * @return Response The updated node object.
+     * @throws \Exception
+     */
+    public function process($info, $new_entity, $param, $column, $value, $custom_data_tables)
+    {
+    
+        // Special handling for our custom columns.
+        // We're only going to do something if the field belongs to the my_custom_field module
+        if ('my_custom_field' === $info['module']) {
+
+            // We only want to take action if custom_data_tables were provided by the tester in the form of custom steps.
+            if(isset($custom_data_tables[$param]))
+            {
+                // ignore any placeholder value that was provided (e.g. the "Fieldset" entered above).
+                $new_entity->{$param} = []; 
+                // Get the appropriate table based on the field in question.
+                $table = $custom_data_tables[$param];
+                // For each custom column that was provided, we format it as RestWS requires.
+                foreach ($table->getHash() as $hash) {
+                  $new_entity->{$param}[$hash['OPTION']] = $hash['VALUE'];
+                }
+            } else {
+                // If the field exists but the custom data wasn't provided, we let folks know how to fix it.
+                throw new \Exception(sprintf('Option data not set for field "%s". There is a custom step to set option data for this field.', $param));
+            }
+        }
+        
+        return $new_entity;
+
+    }
+
+}
+```
