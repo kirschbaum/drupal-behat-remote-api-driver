@@ -14,7 +14,7 @@ If you are not already familiar with Behat or the [Drupal Extention](https://git
 
 ## Documentation
 
-* Installation
+* [Installation](doc/installation.md)
 * Usage Examples
 * Basic Auth + Drupal Auth
 * Adding custom field formatters
