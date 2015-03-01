@@ -1,5 +1,5 @@
 ## Installation
-[Back to the navigation](drupal-behat-remote-api-driver#documentation)
+[Back to the navigation](https://github.com/kirschbaum/drupal-behat-remote-api-driver#documentation)
 
 
 ### For A New Project
