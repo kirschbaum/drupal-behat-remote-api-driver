@@ -9,5 +9,5 @@ Here are some things you should consider:
 * Use basic Auth where possible
 * Use firewalls where appropriate to limit access to critical functions of the Drupal site (e.g. creating or deleting users, etc).
 * Limit or prevent use of the tool on production websites (e.g. only perform destructive tests on staging or pre-production environments, disabling the client module on production).
-* If you plan to store credentials, be sure to encrypted them.
+* If you plan to store credentials, be sure to encrypt them.
 * Create a user role blacklist (preventing certain roles from being assigned by the tool).
