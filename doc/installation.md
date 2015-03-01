@@ -6,13 +6,13 @@
 
 We'll be using Composer. First create a new folder:
 
-```
+```sh
 mkdir foo_project
 ```
 
 Create a new file called "composer.json" with the following:
 
-```
+```json
 {
   "require": {
   "kirschbaum/drupal-behat-remote-api-driver": "dev-master"
@@ -25,7 +25,7 @@ Create a new file called "composer.json" with the following:
 
 From the command line run:
 
-```
+```sh
 composer install
 ```
 
@@ -33,7 +33,7 @@ composer install
 
 In the foo_project folder create a file called "behat.yml". What follows is baseline configuration. See the rest of the documentation for additional options.
 
-```
+```yml
 default:
     paths:
         features: features
@@ -57,23 +57,23 @@ default:
 
 In the foo_project directory run:
 
-```
+```sh
 bin/behat --init
 ```
 
 Finally, you'll need to go to edit the file foo_project/features/bootstrap/FeatureContext.php. Replace the folowing line:
 
-```
+```php
 class FeatureContext extends 
 ```
 with:
-```
+```php
 class FeatureContext extends \Kirschbaum\DrupalBehatRemoteAPIDriver\DrupalRemoteContext
 ```
 
 And that's it! You can view pre-defined steps by running:
 
-```
+```sh
 bin/behat -di
 ```
 
