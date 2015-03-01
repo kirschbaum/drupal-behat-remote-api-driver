@@ -1,5 +1,5 @@
 ## Installation
-[Back to the navigation](README.md#Documentation)
+[Back to the navigation](drupal-behat-remote-api-driver#documentation)
 
 
 ### For A New Project
