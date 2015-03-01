@@ -17,6 +17,7 @@ If you are not already familiar with Behat or the [Drupal Extention](https://git
 * [Installation](doc/installation.md)
 * [Usage Examples] (features/drupalRemoteAPI.feature)
 * [Basic Auth + Drupal Auth](doc/remote_authentication.md)
+* [Support for custom tabular data](doc/custom_tabular_data.md)
 * [Adding custom field formatter](doc/custom_formatter.md)
 * [Add a custom cookie to request headers](doc/custom_cookie.md)
 * [Notes on Security](doc/security_notes.md)
