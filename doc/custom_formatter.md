@@ -9,7 +9,7 @@ There may be times when the Drupal field data you are trying to store through th
 
 Create a new class in your project (you can store it wherever you want, just make sure it gets autoloaded). The class should implement Kirschbaum\DrupalBehatRemoteAPIDriver\CustomFormatterInterface:
 
-```
+```php
 <?php namespace DrupalRemoteAPI;
 
 use Kirschbaum\DrupalBehatRemoteAPIDriver\CustomFormatterInterface;
@@ -43,7 +43,7 @@ class FieldFormatter implements CustomFormatterInterface {
 
 In order for the library to know to include your custom formatter we need to add the "custom_formatter_class" to the behat.yml file:
 
-```
+```yml
       Kirschbaum\DrupalBehatRemoteAPIDriver\DrupalRemoteExtension:
         blackbox: ~
         api_driver: 'drupal_remote_api'
@@ -59,7 +59,7 @@ In order for the library to know to include your custom formatter we need to add
 
 The [JQuery Tabs Field module](https://www.drupal.org/project/field_jquery_tabs) implements a custom Drupal field. Unlike typical Drupal fields, this module creates a field that has 20+ columns. The remote API driver has no idea how this data should be formatted. Let's fix it, with a custom formatter:
 
-```
+```php
 <?php namespace DrupalRemoteAPI;
 
 use Kirschbaum\DrupalBehatRemoteAPIDriver\CustomFormatterInterface;
@@ -107,5 +107,3 @@ class FieldFormatter implements CustomFormatterInterface {
 
 }
 ```
-
-
