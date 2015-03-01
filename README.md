@@ -21,6 +21,8 @@ If you are not already familiar with Behat or the [Drupal Extention](https://git
 * Add a custom cookie to request headers
 * Notes on Security
 
+If anything is unclear or you have any questions or comments, please open an issue or [contact me directly](http://www.nathankirschbaum.com/contact). While this library is functional, it's still a work in progress. Review, feedback, and contributions are welcome. 
+
 ## Features 
 
 * Currently Supported
