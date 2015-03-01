@@ -1,4 +1,4 @@
-## Handling Custom Field Types + Tabular Data
+## Handling Custom Field Types / Structures
 [Back to the navigation](https://github.com/kirschbaum/drupal-behat-remote-api-driver#documentation)
 
 ### Tabular Data
