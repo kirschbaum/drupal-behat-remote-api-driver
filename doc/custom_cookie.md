@@ -3,7 +3,7 @@
 
 In some cases it may be useful to add a cookie to the request header. This is typical, but might be useful if your sites use cookies for various functionality. To set a cookie, add the "request_cookie" parameter to your behat.yml file:
 
-```
+```yml
       Kirschbaum\DrupalBehatRemoteAPIDriver\DrupalRemoteExtension:
         blackbox: ~
         api_driver: 'drupal_remote_api'
