@@ -15,10 +15,10 @@ Create a new file called "composer.json" with the following:
 ```json
 {
   "require": {
-  "kirschbaum/drupal-behat-remote-api-driver": "dev-master"
+    "kirschbaum/drupal-behat-remote-api-driver": "dev-master"
   },
   "config": {
-  "bin-dir": "bin/"
+    "bin-dir": "bin/"
   }
 }
 ```
