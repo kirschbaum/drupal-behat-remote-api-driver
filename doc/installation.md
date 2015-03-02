@@ -61,14 +61,23 @@ In the foo_project directory run:
 bin/behat --init
 ```
 
-Finally, you'll need to go to edit the file foo_project/features/bootstrap/FeatureContext.php. Replace the folowing line:
+Then you'll need to go to edit the file foo_project/features/bootstrap/FeatureContext.php. Replace the folowing line:
 
 ```php
-class FeatureContext extends 
+class FeatureContext extends BehatContext
 ```
 with:
 ```php
 class FeatureContext extends \Kirschbaum\DrupalBehatRemoteAPIDriver\DrupalRemoteContext
+```
+
+Finally, in the same FeatureContext.php file we'll need to pass up the $parameters array to the parent constructor like so:
+
+```php
+    public function __construct(array $parameters)
+    {
+        parent::__construct($parameters);
+    }
 ```
 
 And that's it! You can view pre-defined steps by running:
