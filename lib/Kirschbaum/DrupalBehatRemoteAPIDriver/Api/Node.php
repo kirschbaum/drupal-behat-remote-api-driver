@@ -169,17 +169,6 @@ class Node extends BaseDrupalRemoteAPI {
                                     }
                                 }
 
-                                // @TODO Not clear what this is for. Field collections?
-                                elseif (is_array($value)) {
-                                    foreach ($value as $key => $data) {
-                                        if (is_int($key) && (isset($value[$key+1]) || isset($value[$key-1]))) {
-                                            $new_entity->{$param}[Node::LANGUAGE_NONE][$key] = $data;
-                                        } else {
-                                            $new_entity->{$param}[Node::LANGUAGE_NONE][0][$key] = $data;
-                                        }
-                                    }
-                                }
-
                                 elseif ('text_long' === $info['type'] || 'text_with_summary' === $info['type']) {
                                     $new_entity->{$param}[$column] = $value;
                                     $new_entity->{$param}['format'] = $this->getFilterFormat();
