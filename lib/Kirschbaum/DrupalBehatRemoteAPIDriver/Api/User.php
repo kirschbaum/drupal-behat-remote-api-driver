@@ -23,4 +23,11 @@ class User extends BaseDrupalRemoteAPI {
         return $this->delete('/user/'.$user->uid);
     }
 
+    public function getUserIDbyAuthorName($value)
+    {
+        $response = $this->get('/user.json?name=' . trim($value));
+        $this->confirmRestWSFilterResponse($response);
+        return $user_id = $response['list'][0]['uid'];
+    }
+
 }
