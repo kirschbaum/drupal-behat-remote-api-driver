@@ -1,5 +1,6 @@
 <?php namespace Kirschbaum\DrupalBehatRemoteAPIDriver\Api;
 
+use Kirschbaum\DrupalBehatRemoteAPIDriver\Client;
 use Kirschbaum\DrupalBehatRemoteAPIDriver\Exception\FilterFormatException;
 
 class Node extends BaseDrupalRemoteAPI {
@@ -12,6 +13,16 @@ class Node extends BaseDrupalRemoteAPI {
     protected $custom_data_tables;
     protected $custom_formatter_class;
     protected $custom_formatter;
+    protected $user_service;
+
+    public function __construct(Client $client, User $user_service = NULL)
+    {
+        $this->client = $client;
+        if(!isset($user_service))
+        {
+            $this->user_service = new User($client);
+        }
+    }
 
     /**
      * Create Node
@@ -61,6 +72,7 @@ class Node extends BaseDrupalRemoteAPI {
 
     /**
      *  GET and set Remote API metadata
+     * @TODO Should be part of Term Class
      * @param $terms
      * @return
      * @throws \Kirschbaum\DrupalBehatRemoteAPIDriver\Exception\DrupalResponseCodeException
@@ -93,6 +105,7 @@ class Node extends BaseDrupalRemoteAPI {
 
     /**
      * Given a node object, expand fields to match the format expected by node_save().
+     * @TODO This entire method needs refactoring.
      *
      * @param stdClass|\stdClass $entity
      *   Entity object.
@@ -138,8 +151,9 @@ class Node extends BaseDrupalRemoteAPI {
                                 // Special handling for term references.
                                 elseif ('taxonomy' === $info['module']) {
                                     $terms = $this->getTermsMetadata($value);
+                                    $new_entity->{$param} = array();
                                     foreach ($terms as $term) {
-                                        $new_entity->{$param}['id'] = $term['tid'];
+                                        $new_entity->{$param}[] = array('id' => $term['tid']);
                                     }
                                 }
 
@@ -190,6 +204,9 @@ class Node extends BaseDrupalRemoteAPI {
                     }
                 }
             }
+
+            $new_entity = $this->ifParamIsAuthorGetUserIDForResponse($param, $value, $new_entity);
+
         }
 
         return get_object_vars($new_entity);
@@ -251,6 +268,20 @@ class Node extends BaseDrupalRemoteAPI {
         {
             throw new FilterFormatException(sprintf('The filter format "%s" either does not exist, or this user does not have permission to use it', $this->drupal_filter_format));
         }
+    }
+
+    /**
+     * @param $param
+     * @param $value
+     * @param $new_entity
+     */
+    private function ifParamIsAuthorGetUserIDForResponse($param, $value, $new_entity)
+    {
+        if ($param == 'author') {
+            $user_id = $this->user_service->getUserIDbyAuthorName($value);
+            $new_entity->{$param} = array('id' => $user_id);
+        }
+        return $new_entity;
     }
 
 }
