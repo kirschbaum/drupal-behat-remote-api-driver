@@ -1,7 +1,7 @@
 [{
     "request": {
         "method": "DELETE",
-        "url": "http:\/\/drupalsite.loc:8000\/user\/88",
+        "url": "http:\/\/drupalsite.loc:8000\/user\/416",
         "headers": {
             "Host": "drupalsite.loc:8000",
             "Accept": "application\/json",
@@ -15,15 +15,15 @@
         "status": 200,
         "headers": {
             "Server": "nginx\/1.6.2",
-            "Date": "Thu, 26 Feb 2015 18:16:52 GMT",
+            "Date": "Tue, 03 Mar 2015 19:45:24 GMT",
             "Content-Type": "application\/json",
             "Transfer-Encoding": "chunked",
             "Connection": "keep-alive",
             "Expires": "Sun, 19 Nov 1978 05:00:00 GMT",
-            "Last-Modified": "Thu, 26 Feb 2015 18:16:52 GMT",
+            "Last-Modified": "Tue, 03 Mar 2015 19:45:24 GMT",
             "Cache-Control": "no-cache, must-revalidate, post-check=0, pre-check=0",
-            "ETag": "\"1424974612\"",
-            "Set-Cookie": "SESS488d94cf44c7293d2d0740a8c4e190bc=qzHEus7_uljHTYgD8skbTjzM7lWhfS2ekVL_sU2MIZU; expires=Sat, 21-Mar-2015 21:50:12 GMT; Max-Age=2000000; path=\/; domain=.drupalsite.loc; HttpOnly"
+            "ETag": "\"1425411924\"",
+            "Set-Cookie": "SESS488d94cf44c7293d2d0740a8c4e190bc=9BpqZuBHz-88Szq3AxXyNymQUa563KM4jVa3dzCnxKw; expires=Thu, 26-Mar-2015 23:18:44 GMT; Max-Age=2000000; path=\/; domain=.drupalsite.loc; HttpOnly"
         },
         "body": "[]"
     }

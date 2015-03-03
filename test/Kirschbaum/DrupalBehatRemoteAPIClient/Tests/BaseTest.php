@@ -32,4 +32,13 @@ class BaseTest extends \PHPUnit_Framework_TestCase {
         return $user;
     }
 
+    public function test_term_params()
+    {
+        $term = new \stdClass();
+        $term->name = 'My Term';
+        $term->description = 'My term description';
+        $term->vid = 1;
+        return $term;
+    }
+
 } 

@@ -8,23 +8,23 @@
             "User-Agent": "drupal-behat-remote-api-driver (https:\/\/github.com\/kirschbaum\/drupal-behat-remote-api-driver)",
             "Content-Type": "application\/json",
             "Drupal-Auth": "dXNlcm5hbWU6cGFzc3dvcmQ=",
-            "Content-Length": "45"
+            "Content-Length": "46"
         },
-        "body": "{\"uid\":\"88\",\"role_name\":\"authenticated user\"}"
+        "body": "{\"uid\":\"416\",\"role_name\":\"authenticated user\"}"
     },
     "response": {
         "status": 200,
         "headers": {
             "Server": "nginx\/1.6.2",
-            "Date": "Thu, 26 Feb 2015 18:16:52 GMT",
+            "Date": "Tue, 03 Mar 2015 19:45:24 GMT",
             "Content-Type": "application\/json",
             "Transfer-Encoding": "chunked",
             "Connection": "keep-alive",
             "Expires": "Sun, 19 Nov 1978 05:00:00 GMT",
-            "Last-Modified": "Thu, 26 Feb 2015 18:16:52 GMT",
+            "Last-Modified": "Tue, 03 Mar 2015 19:45:23 GMT",
             "Cache-Control": "no-cache, must-revalidate, post-check=0, pre-check=0",
-            "ETag": "\"1424974612\"",
-            "Set-Cookie": "SESS488d94cf44c7293d2d0740a8c4e190bc=TLcKVeoZwkvKoGsReRQjjL8S5wLkVpVY9RphnfqL-rc; expires=Sat, 21-Mar-2015 21:50:12 GMT; Max-Age=2000000; path=\/; domain=.drupalsite.loc; HttpOnly",
+            "ETag": "\"1425411923\"",
+            "Set-Cookie": "SESS488d94cf44c7293d2d0740a8c4e190bc=rfr7U-GO0UyPICzIFgbKP7Ov_C0PYYMFotkZ4meyeRk; expires=Thu, 26-Mar-2015 23:18:44 GMT; Max-Age=2000000; path=\/; domain=.drupalsite.loc; HttpOnly",
             "Content-Language": "en"
         },
         "body": "{\"data\":[],\"message\":\"Role successfully added\",\"response_code\":200}"

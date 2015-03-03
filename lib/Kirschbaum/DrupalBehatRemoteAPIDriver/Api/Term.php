@@ -14,7 +14,7 @@ class Term extends BaseDrupalRemoteAPI {
         $term = $this->setVIDBasedOnRemoteVocabularyName($term);
         $term = $this->setVIDBasedOnRemoteVocabularyMachineName($term);
         $term = $this->ifParentExistsGetTermOfVocab($term);
-        $this->confirmVocabulariesWasFound($term);
+        $this->confirmVocabularyWasFound($term);
         $term = $this->transformOutgoingDataForRestWS($term);
         $result = $this->post('/taxonomy_term', (array) $term);
         $this->confirmResponseStatusCodeIs200($result);
@@ -89,10 +89,10 @@ class Term extends BaseDrupalRemoteAPI {
         return $term;
     }
 
-    private function confirmVocabulariesWasFound($term)
+    private function confirmVocabularyWasFound($term)
     {
         if (empty($term->vid)) {
-            throw new RuntimeException(sprintf('No "%s" vocabulary found.', $term->name));
+            throw new RuntimeException(sprintf('The vocabulary name provided ("%s") did not match the name or machine_name of the remote site vocabularies.', $term->vocabulary_machine_name));
         }
     }
 
