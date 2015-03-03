@@ -5,7 +5,7 @@ use Kirschbaum\DrupalBehatRemoteAPIDriver\Exception\DrupalResponseException;
 use Kirschbaum\DrupalBehatRemoteAPIDriver\Exception\RuntimeException;
 
 class Term extends BaseDrupalRemoteAPI {
-    
+
     protected $remote_vocabularies;
 
     public function termCreate(\stdClass $term) {
@@ -86,12 +86,13 @@ class Term extends BaseDrupalRemoteAPI {
             //     $term->parent = $parent->tid;
             // }
         }
+        return $term;
     }
 
     private function confirmVocabulariesWasFound($term)
     {
         if (empty($term->vid)) {
-            throw new \Exception(sprintf('No "%s" vocabulary found.'));
+            throw new RuntimeException(sprintf('No "%s" vocabulary found.', $term->name));
         }
     }
 
