@@ -14,14 +14,13 @@ class Node extends BaseDrupalRemoteAPI {
     protected $custom_formatter_class;
     protected $custom_formatter;
     protected $user_service;
+    protected $term_service;
 
-    public function __construct(Client $client, User $user_service = NULL)
+    public function __construct(Client $client, User $user_service = NULL, Term $term_service = NULL)
     {
         $this->client = $client;
-        if(!isset($user_service))
-        {
-            $this->user_service = new User($client);
-        }
+        $this->user_service = (isset($user_service)) ? $user_service : new User($this->client);
+        $this->term_service = (isset($term_service)) ? $term_service : new Term($this->client);
     }
 
     /**
@@ -72,16 +71,11 @@ class Node extends BaseDrupalRemoteAPI {
 
     /**
      *  GET and set Remote API metadata
-     * @TODO Should be part of Term Class
      * @param $terms
-     * @return
-     * @throws \Kirschbaum\DrupalBehatRemoteAPIDriver\Exception\DrupalResponseCodeException
      */
-    protected function getTermsMetadata($terms)
+    protected function getAndSetTermsMetadata($terms)
     {
-        $response = $this->get('/drupal-remote-api/terms/'.$terms);
-        $this->confirmResponseStatusCodeIs200($response);
-        return $this->terms_metadata = $response['data'];
+        $this->terms_metadata = $this->term_service->getTermsMetadata($terms);
     }
 
     /**
@@ -150,9 +144,9 @@ class Node extends BaseDrupalRemoteAPI {
 
                                 // Special handling for term references.
                                 elseif ('taxonomy' === $info['module']) {
-                                    $terms = $this->getTermsMetadata($value);
+                                    $this->getAndSetTermsMetadata($value);
                                     $new_entity->{$param} = array();
-                                    foreach ($terms as $term) {
+                                    foreach ($this->terms_metadata as $term) {
                                         $new_entity->{$param}[] = array('id' => $term['tid']);
                                     }
                                 }

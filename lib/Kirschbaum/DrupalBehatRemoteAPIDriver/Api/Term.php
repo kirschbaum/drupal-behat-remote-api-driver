@@ -96,5 +96,13 @@ class Term extends BaseDrupalRemoteAPI {
         }
     }
 
+    // @TODO Look more into moving this to RestWS instead of custom API.
+    public function getTermsMetadata($terms)
+    {
+        $response = $this->get('/drupal-remote-api/terms/'.$terms);
+        $this->confirmResponseStatusCodeIs200($response);
+        return $response['data'];
+    }
+
 
 }
