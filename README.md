@@ -29,6 +29,7 @@ If anything is unclear or you have any questions or comments, please open an iss
  * Drupal 7
  * Node creation / deletion / cleanup
  * User creation / deletion / cleanup
+ * * Term create / delete / cleanup ([currently requires a patch to RestWS](https://www.drupal.org/node/2090177#comment-9680433))
  * Add existing user role to new user
  * Set custom filter format based on tester defined preference or default from remote site
  * Support for custom fields and tabular data
@@ -37,9 +38,8 @@ If anything is unclear or you have any questions or comments, please open an iss
  * Adding custom cookie to request header
  * Clear cache
 * Planned / In Progress:
- * Support for field collections
- * Term create / delete / cleanup
  * Support Image Reference / Upload
+ * Support for field collections
 * Not Yet Supported:
  * Run Cron
  * Create new user role and assign to newly created users / delete role when finished
