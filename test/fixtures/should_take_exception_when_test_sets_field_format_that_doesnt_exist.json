@@ -15,15 +15,15 @@
         "status": 200,
         "headers": {
             "Server": "nginx\/1.6.2",
-            "Date": "Thu, 26 Feb 2015 18:16:51 GMT",
+            "Date": "Tue, 03 Mar 2015 19:45:22 GMT",
             "Content-Type": "application\/json",
             "Transfer-Encoding": "chunked",
             "Connection": "keep-alive",
             "Expires": "Sun, 19 Nov 1978 05:00:00 GMT",
-            "Last-Modified": "Thu, 26 Feb 2015 18:16:51 GMT",
+            "Last-Modified": "Tue, 03 Mar 2015 19:45:22 GMT",
             "Cache-Control": "no-cache, must-revalidate, post-check=0, pre-check=0",
-            "ETag": "\"1424974611\"",
-            "Set-Cookie": "SESS488d94cf44c7293d2d0740a8c4e190bc=WuDZJteL-51t2WO0vl0ZmapuDV-jls7RQISZmeBVpgw; expires=Sat, 21-Mar-2015 21:50:11 GMT; Max-Age=2000000; path=\/; domain=.drupalsite.loc; HttpOnly",
+            "ETag": "\"1425411922\"",
+            "Set-Cookie": "SESS488d94cf44c7293d2d0740a8c4e190bc=wBvp6jUZ-55raAehTyZFbGFo70VUQBeHnzLBL1uAnC8; expires=Thu, 26-Mar-2015 23:18:42 GMT; Max-Age=2000000; path=\/; domain=.drupalsite.loc; HttpOnly",
             "Content-Language": "en"
         },
         "body": "{\"data\":{\"filter_formats\":{\"filtered_html\":{\"format\":\"filtered_html\",\"name\":\"Filtered HTML\",\"cache\":\"1\",\"status\":\"1\",\"weight\":\"0\"},\"plain_text\":{\"format\":\"plain_text\",\"name\":\"Plain text\",\"cache\":\"1\",\"status\":\"1\",\"weight\":\"10\"}},\"node_type_get_types\":{\"article\":{\"type\":\"article\",\"name\":\"Article\",\"base\":\"node_content\",\"module\":\"node\",\"description\":\"Use \\u003Cem\\u003Earticles\\u003C\\\/em\\u003E for time-sensitive content like news, press releases or blog posts.\",\"help\":\"\",\"has_title\":\"1\",\"title_label\":\"Title\",\"custom\":\"1\",\"modified\":\"1\",\"locked\":\"0\",\"disabled\":\"0\",\"orig_type\":\"article\",\"disabled_changed\":false},\"page\":{\"type\":\"page\",\"name\":\"Basic page\",\"base\":\"node_content\",\"module\":\"node\",\"description\":\"Use \\u003Cem\\u003Ebasic pages\\u003C\\\/em\\u003E for your static content, such as an \\u0027About us\\u0027 page.\",\"help\":\"\",\"has_title\":\"1\",\"title_label\":\"Title\",\"custom\":\"1\",\"modified\":\"1\",\"locked\":\"0\",\"disabled\":\"0\",\"orig_type\":\"page\",\"disabled_changed\":false}},\"field_info_field\":{\"type\":null,\"title\":null,\"body\":{\"entity_types\":[\"node\"],\"translatable\":\"0\",\"settings\":[],\"storage\":{\"type\":\"field_sql_storage\",\"settings\":[],\"module\":\"field_sql_storage\",\"active\":\"1\",\"details\":{\"sql\":{\"FIELD_LOAD_CURRENT\":{\"field_data_body\":{\"value\":\"body_value\",\"summary\":\"body_summary\",\"format\":\"body_format\"}},\"FIELD_LOAD_REVISION\":{\"field_revision_body\":{\"value\":\"body_value\",\"summary\":\"body_summary\",\"format\":\"body_format\"}}}}},\"foreign keys\":{\"format\":{\"table\":\"filter_format\",\"columns\":{\"format\":\"format\"}}},\"indexes\":{\"format\":[\"format\"]},\"id\":\"2\",\"field_name\":\"body\",\"type\":\"text_with_summary\",\"module\":\"text\",\"active\":\"1\",\"locked\":\"0\",\"cardinality\":\"1\",\"deleted\":\"0\",\"columns\":{\"value\":{\"type\":\"text\",\"size\":\"big\",\"not null\":false},\"summary\":{\"type\":\"text\",\"size\":\"big\",\"not null\":false},\"format\":{\"type\":\"varchar\",\"length\":255,\"not null\":false}},\"bundles\":{\"node\":[\"page\",\"article\"]}}}},\"message\":\"Entity metadata retrieved successfully\",\"response_code\":200}"

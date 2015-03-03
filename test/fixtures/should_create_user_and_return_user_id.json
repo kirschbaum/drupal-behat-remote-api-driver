@@ -16,17 +16,17 @@
         "status": 200,
         "headers": {
             "Server": "nginx\/1.6.2",
-            "Date": "Thu, 26 Feb 2015 18:16:52 GMT",
+            "Date": "Tue, 03 Mar 2015 19:45:23 GMT",
             "Content-Type": "application\/json",
             "Transfer-Encoding": "chunked",
             "Connection": "keep-alive",
             "Expires": "Sun, 19 Nov 1978 05:00:00 GMT",
-            "Last-Modified": "Thu, 26 Feb 2015 18:16:51 GMT",
+            "Last-Modified": "Tue, 03 Mar 2015 19:45:23 GMT",
             "Cache-Control": "no-cache, must-revalidate, post-check=0, pre-check=0",
-            "ETag": "\"1424974611\"",
-            "Set-Cookie": "SESS488d94cf44c7293d2d0740a8c4e190bc=f2mlqJ-NvSFIEIE_aEnoNXJsDKh_ZdObGh8bjEqCnek; expires=Sat, 21-Mar-2015 21:50:12 GMT; Max-Age=2000000; path=\/; domain=.drupalsite.loc; HttpOnly",
+            "ETag": "\"1425411923\"",
+            "Set-Cookie": "SESS488d94cf44c7293d2d0740a8c4e190bc=SUJ6yetKUGVRjUck8cNhDN4Ssg7QBcghNfp2z7cvvUw; expires=Thu, 26-Mar-2015 23:18:43 GMT; Max-Age=2000000; path=\/; domain=.drupalsite.loc; HttpOnly",
             "Content-Language": "en"
         },
-        "body": "{\"data\":\"88\",\"message\":\"User successfully created\",\"response_code\":200}"
+        "body": "{\"data\":\"416\",\"message\":\"User successfully created\",\"response_code\":200}"
     }
 }]
