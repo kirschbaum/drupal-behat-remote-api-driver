@@ -95,6 +95,10 @@ class Client
             case 'nodes':
                 $api = new Api\Node($this);
                 break;
+            case 'term':
+            case 'terms':
+                $api = new Api\Term($this);
+                break;
             case 'user':
             case 'users':
                 $api = new Api\User($this);

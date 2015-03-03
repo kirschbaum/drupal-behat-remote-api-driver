@@ -135,8 +135,31 @@ class DrupalBehatRemoteApiDriver extends BaseDriver {
         }
     }
 
+    /**
+     * Implements DriverInterface::termCreate().
+     */
+    public function createTerm(\stdClass $term) {
+        try {
+            return $this->getDrupalRemoteClient()->api('term')->termCreate($term);
+        } catch (\Exception $e) {
+            throw new RuntimeException($e->getMessage());
+        }
+    }
+
+    /**
+     * Implements DriverInterface::termDelete().
+     */
+    public function termDelete(\stdClass $term) {
+        try {
+            $this->getDrupalRemoteClient()->api('term')->termDelete($term);
+        } catch (\Exception $e) {
+            throw new RuntimeException($e->getMessage());
+        }
+    }
+
     public function processBatch() {
-        // Not clear why we need this yet.
+        // This is needed for afterScenerio() cleanup.
+        // Seems required to cleanup multiple users.
     }
 
     public function clearCache($type = NULL)
