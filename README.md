@@ -29,7 +29,7 @@ If anything is unclear or you have any questions or comments, please open an iss
  * Drupal 7
  * Node creation / deletion / cleanup
  * User creation / deletion / cleanup
- * * Term create / delete / cleanup ([currently requires a patch to RestWS](https://www.drupal.org/node/2090177#comment-9680433))
+ * Term create / delete / cleanup ([currently requires a patch to RestWS](https://www.drupal.org/node/2090177#comment-9680433))
  * Add existing user role to new user
  * Set custom filter format based on tester defined preference or default from remote site
  * Support for custom fields and tabular data
