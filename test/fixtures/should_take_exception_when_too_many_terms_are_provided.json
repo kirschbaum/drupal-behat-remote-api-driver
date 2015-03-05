@@ -1,0 +1,61 @@
+[{
+    "request": {
+        "method": "GET",
+        "url": "http:\/\/drupalsite.loc:8000\/drupal-remote-api\/entities\/type,title,body,field_tags",
+        "headers": {
+            "Host": "drupalsite.loc:8000",
+            "Accept": "application\/json",
+            "Content-Type": "application\/json",
+            "User-Agent": "drupal-behat-remote-api-driver (https:\/\/github.com\/kirschbaum\/drupal-behat-remote-api-driver)",
+            "Drupal-Auth": "dXNlcm5hbWU6cGFzc3dvcmQ=",
+            "Content-Length": "0"
+        }
+    },
+    "response": {
+        "status": 200,
+        "headers": {
+            "Server": "nginx\/1.6.2",
+            "Date": "Thu, 05 Mar 2015 21:11:25 GMT",
+            "Content-Type": "application\/json",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Expires": "Sun, 19 Nov 1978 05:00:00 GMT",
+            "Last-Modified": "Thu, 05 Mar 2015 21:11:25 GMT",
+            "Cache-Control": "no-cache, must-revalidate, post-check=0, pre-check=0",
+            "ETag": "\"1425589885\"",
+            "Set-Cookie": "SESS488d94cf44c7293d2d0740a8c4e190bc=Bc25QbilTi-9ouRnSG_81ghDDGsJwdt3nsqQ0cJ3E_4; expires=Sun, 29-Mar-2015 00:44:45 GMT; Max-Age=2000000; path=\/; domain=.drupalsite.loc; HttpOnly",
+            "Content-Language": "en"
+        },
+        "body": "{\"data\":{\"filter_formats\":{\"filtered_html\":{\"format\":\"filtered_html\",\"name\":\"Filtered HTML\",\"cache\":\"1\",\"status\":\"1\",\"weight\":\"0\"},\"plain_text\":{\"format\":\"plain_text\",\"name\":\"Plain text\",\"cache\":\"1\",\"status\":\"1\",\"weight\":\"10\"}},\"node_type_get_types\":{\"article\":{\"type\":\"article\",\"name\":\"Article\",\"base\":\"node_content\",\"module\":\"node\",\"description\":\"Use \\u003Cem\\u003Earticles\\u003C\\\/em\\u003E for time-sensitive content like news, press releases or blog posts.\",\"help\":\"\",\"has_title\":\"1\",\"title_label\":\"Title\",\"custom\":\"1\",\"modified\":\"1\",\"locked\":\"0\",\"disabled\":\"0\",\"orig_type\":\"article\",\"disabled_changed\":false},\"page\":{\"type\":\"page\",\"name\":\"Basic page\",\"base\":\"node_content\",\"module\":\"node\",\"description\":\"Use \\u003Cem\\u003Ebasic pages\\u003C\\\/em\\u003E for your static content, such as an \\u0027About us\\u0027 page.\",\"help\":\"\",\"has_title\":\"1\",\"title_label\":\"Title\",\"custom\":\"1\",\"modified\":\"1\",\"locked\":\"0\",\"disabled\":\"0\",\"orig_type\":\"page\",\"disabled_changed\":false}},\"field_info_field\":{\"type\":null,\"title\":null,\"body\":{\"entity_types\":[\"node\"],\"translatable\":\"0\",\"settings\":[],\"storage\":{\"type\":\"field_sql_storage\",\"settings\":[],\"module\":\"field_sql_storage\",\"active\":\"1\",\"details\":{\"sql\":{\"FIELD_LOAD_CURRENT\":{\"field_data_body\":{\"value\":\"body_value\",\"summary\":\"body_summary\",\"format\":\"body_format\"}},\"FIELD_LOAD_REVISION\":{\"field_revision_body\":{\"value\":\"body_value\",\"summary\":\"body_summary\",\"format\":\"body_format\"}}}}},\"foreign keys\":{\"format\":{\"table\":\"filter_format\",\"columns\":{\"format\":\"format\"}}},\"indexes\":{\"format\":[\"format\"]},\"id\":\"2\",\"field_name\":\"body\",\"type\":\"text_with_summary\",\"module\":\"text\",\"active\":\"1\",\"locked\":\"0\",\"cardinality\":\"1\",\"deleted\":\"0\",\"columns\":{\"value\":{\"type\":\"text\",\"size\":\"big\",\"not null\":false},\"summary\":{\"type\":\"text\",\"size\":\"big\",\"not null\":false},\"format\":{\"type\":\"varchar\",\"length\":255,\"not null\":false}},\"bundles\":{\"node\":[\"page\",\"article\"]}},\"field_tags\":{\"settings\":{\"allowed_values\":[{\"vocabulary\":\"tags\",\"parent\":0}]},\"entity_types\":[],\"translatable\":\"0\",\"storage\":{\"type\":\"field_sql_storage\",\"settings\":[],\"module\":\"field_sql_storage\",\"active\":\"1\",\"details\":{\"sql\":{\"FIELD_LOAD_CURRENT\":{\"field_data_field_tags\":{\"tid\":\"field_tags_tid\"}},\"FIELD_LOAD_REVISION\":{\"field_revision_field_tags\":{\"tid\":\"field_tags_tid\"}}}}},\"foreign keys\":{\"tid\":{\"table\":\"taxonomy_term_data\",\"columns\":{\"tid\":\"tid\"}}},\"indexes\":{\"tid\":[\"tid\"]},\"id\":\"3\",\"field_name\":\"field_tags\",\"type\":\"taxonomy_term_reference\",\"module\":\"taxonomy\",\"active\":\"1\",\"locked\":\"0\",\"cardinality\":\"1\",\"deleted\":\"0\",\"columns\":{\"tid\":{\"type\":\"int\",\"unsigned\":true,\"not null\":false}},\"bundles\":{\"node\":[\"article\"]}}}},\"message\":\"Entity metadata retrieved successfully\",\"response_code\":200}"
+    }
+},{
+    "request": {
+        "method": "GET",
+        "url": "http:\/\/drupalsite.loc:8000\/drupal-remote-api\/terms\/Tag%20one,%20Tag%20two",
+        "headers": {
+            "Host": "drupalsite.loc:8000",
+            "Accept": "application\/json",
+            "Content-Type": "application\/json",
+            "User-Agent": "drupal-behat-remote-api-driver (https:\/\/github.com\/kirschbaum\/drupal-behat-remote-api-driver)",
+            "Drupal-Auth": "dXNlcm5hbWU6cGFzc3dvcmQ=",
+            "Content-Length": "0"
+        }
+    },
+    "response": {
+        "status": 200,
+        "headers": {
+            "Server": "nginx\/1.6.2",
+            "Date": "Thu, 05 Mar 2015 21:11:25 GMT",
+            "Content-Type": "application\/json",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Expires": "Sun, 19 Nov 1978 05:00:00 GMT",
+            "Last-Modified": "Thu, 05 Mar 2015 21:11:25 GMT",
+            "Cache-Control": "no-cache, must-revalidate, post-check=0, pre-check=0",
+            "ETag": "\"1425589885\"",
+            "Set-Cookie": "SESS488d94cf44c7293d2d0740a8c4e190bc=v_kk2NsjHORkkgJMW-F_JP7Um4RRypZaHjieRPaMpx4; expires=Sun, 29-Mar-2015 00:44:45 GMT; Max-Age=2000000; path=\/; domain=.drupalsite.loc; HttpOnly",
+            "Content-Language": "en"
+        },
+        "body": "{\"data\":[{\"tid\":\"61\",\"vid\":\"1\",\"name\":\"Tag one\",\"description\":null,\"format\":null,\"weight\":\"0\",\"vocabulary_machine_name\":\"tags\",\"rdf_mapping\":{\"rdftype\":[\"skos:Concept\"],\"name\":{\"predicates\":[\"rdfs:label\",\"skos:prefLabel\"]},\"description\":{\"predicates\":[\"skos:definition\"]},\"vid\":{\"predicates\":[\"skos:inScheme\"],\"type\":\"rel\"},\"parent\":{\"predicates\":[\"skos:broader\"],\"type\":\"rel\"}}},{\"tid\":\"62\",\"vid\":\"1\",\"name\":\"Tag two\",\"description\":null,\"format\":null,\"weight\":\"0\",\"vocabulary_machine_name\":\"tags\",\"rdf_mapping\":{\"rdftype\":[\"skos:Concept\"],\"name\":{\"predicates\":[\"rdfs:label\",\"skos:prefLabel\"]},\"description\":{\"predicates\":[\"skos:definition\"]},\"vid\":{\"predicates\":[\"skos:inScheme\"],\"type\":\"rel\"},\"parent\":{\"predicates\":[\"skos:broader\"],\"type\":\"rel\"}}}],\"message\":\"Term metadata retrieved successfully\",\"response_code\":200}"
+    }
+}]

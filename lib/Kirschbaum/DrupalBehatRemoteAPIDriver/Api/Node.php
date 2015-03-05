@@ -2,6 +2,7 @@
 
 use Kirschbaum\DrupalBehatRemoteAPIDriver\Client;
 use Kirschbaum\DrupalBehatRemoteAPIDriver\Exception\FilterFormatException;
+use Kirschbaum\DrupalBehatRemoteAPIDriver\Exception\RuntimeException;
 
 class Node extends BaseDrupalRemoteAPI {
 
@@ -145,10 +146,19 @@ class Node extends BaseDrupalRemoteAPI {
                                 // Special handling for term references.
                                 elseif ('taxonomy' === $info['module']) {
                                     $this->getAndSetTermsMetadata($value);
-                                    $new_entity->{$param} = array();
-                                    foreach ($this->terms_metadata as $term) {
-                                        $new_entity->{$param}[] = array('id' => $term['tid']);
+                                    $max_field_values = (int) $info['cardinality'];
+                                    $this->confirmNumberOfTermsAreNotGreaterThanFieldLimit($max_field_values, $param);
+                                    // Special format for one value
+                                    if($max_field_values === 1){
+                                        $new_entity->{$param} = array('id' => $this->terms_metadata[0]['tid']);
+                                    // Format for multiple values
+                                    } else {
+                                        $new_entity->{$param} = array();
+                                        foreach ($this->terms_metadata as $term) {
+                                            $new_entity->{$param}[] = array('id' => $term['tid']);
+                                        }
                                     }
+
                                 }
 
                                 // Special handling for jQuery Tabs Field.
@@ -265,6 +275,14 @@ class Node extends BaseDrupalRemoteAPI {
             $new_entity->{$param} = array('id' => $user_id);
         }
         return $new_entity;
+    }
+
+    private function confirmNumberOfTermsAreNotGreaterThanFieldLimit($max_field_values, $field)
+    {
+        $term_count = count($this->terms_metadata);
+        if($max_field_values != -1 && $max_field_values < $term_count){
+            throw new RuntimeException(sprintf('The %s field on the remote site requires no more than %d terms. %d were provided.', $field, $max_field_values, $term_count));
+        }
     }
 
 }

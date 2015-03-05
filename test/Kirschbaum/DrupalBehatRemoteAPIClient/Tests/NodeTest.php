@@ -88,4 +88,25 @@ class NodeTest extends BaseTest {
         VCR::turnOff();
     }
 
+    /**
+     * @test
+     * @vcr should_take_exception_when_too_many_terms_are_provided.json
+     * @expectedException \Kirschbaum\DrupalBehatRemoteAPIDriver\Exception\RuntimeException
+     * @expectedExceptionMessage The field_tags field on the remote site requires no more than 1 terms. 2 were provided.
+     */
+    public function should_take_exception_when_too_many_terms_are_provided()
+    {
+        VCR::turnOn();
+        VCR::insertCassette('should_take_exception_when_too_many_terms_are_provided.json');
+        $client = new Client();
+        $client->setOption('base_url', $this->url);
+        $client->authenticate($this->username, $this->password, 'http_drupal_login');
+        $nodeRequest = $client->api('nodes');
+        $node = $this->test_node_params();
+        $node->field_tags = 'Tag one, Tag two';
+        $results = $nodeRequest->createNode($node);
+        VCR::eject();
+        VCR::turnOff();
+    }
+
 }

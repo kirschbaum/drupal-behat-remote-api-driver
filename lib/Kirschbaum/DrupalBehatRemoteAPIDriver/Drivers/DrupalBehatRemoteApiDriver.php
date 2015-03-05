@@ -88,7 +88,7 @@ class DrupalBehatRemoteApiDriver extends BaseDriver {
             return $nodeRequest->createNode($node);
         }
         catch(\Exception $e) {
-            throw new RuntimeException($e->getMessage());
+            throw new RuntimeException(sprintf('Remote API Exception: %s', $e->getMessage()));
         }
     }
 
