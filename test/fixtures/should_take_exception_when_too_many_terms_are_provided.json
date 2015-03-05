@@ -58,4 +58,34 @@
         },
         "body": "{\"data\":[{\"tid\":\"61\",\"vid\":\"1\",\"name\":\"Tag one\",\"description\":null,\"format\":null,\"weight\":\"0\",\"vocabulary_machine_name\":\"tags\",\"rdf_mapping\":{\"rdftype\":[\"skos:Concept\"],\"name\":{\"predicates\":[\"rdfs:label\",\"skos:prefLabel\"]},\"description\":{\"predicates\":[\"skos:definition\"]},\"vid\":{\"predicates\":[\"skos:inScheme\"],\"type\":\"rel\"},\"parent\":{\"predicates\":[\"skos:broader\"],\"type\":\"rel\"}}},{\"tid\":\"62\",\"vid\":\"1\",\"name\":\"Tag two\",\"description\":null,\"format\":null,\"weight\":\"0\",\"vocabulary_machine_name\":\"tags\",\"rdf_mapping\":{\"rdftype\":[\"skos:Concept\"],\"name\":{\"predicates\":[\"rdfs:label\",\"skos:prefLabel\"]},\"description\":{\"predicates\":[\"skos:definition\"]},\"vid\":{\"predicates\":[\"skos:inScheme\"],\"type\":\"rel\"},\"parent\":{\"predicates\":[\"skos:broader\"],\"type\":\"rel\"}}}],\"message\":\"Term metadata retrieved successfully\",\"response_code\":200}"
     }
+},{
+    "request": {
+        "method": "GET",
+        "url": "http:\/\/drupalsite.loc:8000\/drupal-remote-api\/terms\/Tag%20one,%20Tag%20two",
+        "headers": {
+            "Host": "drupalsite.loc:8000",
+            "Accept": "application\/json",
+            "Content-Type": "application\/json",
+            "User-Agent": "drupal-behat-remote-api-driver (https:\/\/github.com\/kirschbaum\/drupal-behat-remote-api-driver)",
+            "Drupal-Auth": "dXNlcm5hbWU6cGFzc3dvcmQ=",
+            "Content-Length": "0"
+        }
+    },
+    "response": {
+        "status": 200,
+        "headers": {
+            "Server": "nginx\/1.6.2",
+            "Date": "Thu, 05 Mar 2015 21:23:26 GMT",
+            "Content-Type": "application\/json",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Expires": "Sun, 19 Nov 1978 05:00:00 GMT",
+            "Last-Modified": "Thu, 05 Mar 2015 21:23:26 GMT",
+            "Cache-Control": "no-cache, must-revalidate, post-check=0, pre-check=0",
+            "ETag": "\"1425590606\"",
+            "Set-Cookie": "SESS488d94cf44c7293d2d0740a8c4e190bc=V3ELoCzMa-RD5eq50ZgyNX-Vdx1lvV2nQ3T6cQho2Ak; expires=Sun, 29-Mar-2015 00:56:46 GMT; Max-Age=2000000; path=\/; domain=.drupalsite.loc; HttpOnly",
+            "Content-Language": "en"
+        },
+        "body": "{\"data\":[{\"tid\":\"61\",\"vid\":\"1\",\"name\":\"Tag one\",\"description\":null,\"format\":null,\"weight\":\"0\",\"vocabulary_machine_name\":\"tags\",\"rdf_mapping\":{\"rdftype\":[\"skos:Concept\"],\"name\":{\"predicates\":[\"rdfs:label\",\"skos:prefLabel\"]},\"description\":{\"predicates\":[\"skos:definition\"]},\"vid\":{\"predicates\":[\"skos:inScheme\"],\"type\":\"rel\"},\"parent\":{\"predicates\":[\"skos:broader\"],\"type\":\"rel\"}}},{\"tid\":\"62\",\"vid\":\"1\",\"name\":\"Tag two\",\"description\":null,\"format\":null,\"weight\":\"0\",\"vocabulary_machine_name\":\"tags\",\"rdf_mapping\":{\"rdftype\":[\"skos:Concept\"],\"name\":{\"predicates\":[\"rdfs:label\",\"skos:prefLabel\"]},\"description\":{\"predicates\":[\"skos:definition\"]},\"vid\":{\"predicates\":[\"skos:inScheme\"],\"type\":\"rel\"},\"parent\":{\"predicates\":[\"skos:broader\"],\"type\":\"rel\"}}}],\"message\":\"Term metadata retrieved successfully\",\"response_code\":200}"
+    }
 }]
