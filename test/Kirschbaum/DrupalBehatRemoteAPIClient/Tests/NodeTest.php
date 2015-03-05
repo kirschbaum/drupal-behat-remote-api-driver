@@ -96,7 +96,12 @@ class NodeTest extends BaseTest {
      */
     public function should_take_exception_when_too_many_terms_are_provided()
     {
-        $this->markTestSkipped('Having trouble with Mock Data');
+       // Having trouble with URL encoding match: https://github.com/php-vcr/php-vcr/issues/66
+       VCR::configure()
+         ->addRequestMatcher('url', function ($first, $second)
+         {
+             return $second->getPath() == $first->getPath();
+         });
         VCR::turnOn();
         VCR::insertCassette('should_take_exception_when_too_many_terms_are_provided.json');
         $client = new Client();
