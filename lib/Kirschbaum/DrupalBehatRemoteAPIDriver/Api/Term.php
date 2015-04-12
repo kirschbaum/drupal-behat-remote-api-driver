@@ -38,7 +38,7 @@ class Term extends BaseDrupalRemoteAPI {
     {
         if(!isset($response['list']) || count($response['list']) < 1)
         {
-            throw new DrupalResponseException(sprintf('Remote API Exception: Response did not include vocabularies: %s', $response));
+            throw new DrupalResponseException(sprintf('Remote API Exception: Response did not include vocabularies: %s', $response['message']));
         }
     }
 

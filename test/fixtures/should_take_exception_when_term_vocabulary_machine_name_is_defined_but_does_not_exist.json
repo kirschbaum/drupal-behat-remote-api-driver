@@ -15,16 +15,16 @@
         "status": 200,
         "headers": {
             "Server": "nginx\/1.6.2",
-            "Date": "Tue, 03 Mar 2015 19:45:23 GMT",
+            "Date": "Sun, 12 Apr 2015 18:10:14 GMT",
             "Content-Type": "application\/json",
             "Transfer-Encoding": "chunked",
             "Connection": "keep-alive",
             "Expires": "Sun, 19 Nov 1978 05:00:00 GMT",
-            "Last-Modified": "Tue, 03 Mar 2015 19:45:23 GMT",
+            "Last-Modified": "Sun, 12 Apr 2015 18:10:13 GMT",
             "Cache-Control": "no-cache, must-revalidate, post-check=0, pre-check=0",
-            "ETag": "\"1425411923\"",
-            "Set-Cookie": "SESS488d94cf44c7293d2d0740a8c4e190bc=KmAL2ZCJOkVqNl6V-EonbYch7EDwQ4nlO_RZaT1U4Qc; expires=Thu, 26-Mar-2015 23:18:43 GMT; Max-Age=2000000; path=\/; domain=.drupalsite.loc; HttpOnly"
+            "ETag": "\"1428862213\"",
+            "Set-Cookie": "SESS488d94cf44c7293d2d0740a8c4e190bc=EPL2RnqVB3BTqMQLibOR9NXlEvtViuFOvKWqtd1F0hI; expires=Tue, 05-May-2015 21:43:33 GMT; Max-Age=2000000; path=\/; domain=.drupalsite.loc; HttpOnly"
         },
-        "body": "{\"self\":\"http:\\\/\\\/drupalsite.loc:8000\\\/taxonomy_vocabulary\",\"first\":\"http:\\\/\\\/drupalsite.loc:8000\\\/taxonomy_vocabulary?page=0\",\"last\":\"http:\\\/\\\/drupalsite.loc:8000\\\/taxonomy_vocabulary?page=0\",\"list\":[{\"vid\":\"3\",\"name\":\"Nathan 2\",\"machine_name\":\"nathan_2\",\"description\":\"\",\"term_count\":\"0\"},{\"vid\":\"1\",\"name\":\"Tags\",\"machine_name\":\"tags\",\"description\":\"Use tags to group articles on similar topics into categories.\",\"term_count\":\"105\"}]}"
+        "body": "{\"self\":\"http:\\\/\\\/drupalsite.loc:8000\\\/taxonomy_vocabulary\",\"first\":\"http:\\\/\\\/drupalsite.loc:8000\\\/taxonomy_vocabulary?page=0\",\"last\":\"http:\\\/\\\/drupalsite.loc:8000\\\/taxonomy_vocabulary?page=0\",\"list\":[{\"vid\":\"3\",\"name\":\"Nathan 2\",\"machine_name\":\"nathan_2\",\"description\":\"\",\"term_count\":\"0\"},{\"vid\":\"1\",\"name\":\"Tags\",\"machine_name\":\"tags\",\"description\":\"Use tags to group articles on similar topics into categories.\",\"term_count\":\"0\"}]}"
     }
 }]
