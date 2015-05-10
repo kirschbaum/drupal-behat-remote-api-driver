@@ -11,15 +11,11 @@ class NodeTest extends BaseTest {
      */
     public function should_create_node_and_return_object_with_node_id()
     {
-        VCR::turnOn();
-        VCR::insertCassette('should_create_node_and_return_object_with_node_id.json');
         $client = new Client();
         $client->setOption('base_url', $this->url);
         $client->authenticate($this->username, $this->password, 'http_drupal_login');
         $results = $client->api('nodes')->createNode($this->test_node_params());
         $this->assertObjectHasAttribute('nid', $results);
-        VCR::eject();
-        VCR::turnOff();
     }
 
     /**
@@ -28,25 +24,19 @@ class NodeTest extends BaseTest {
      */
     public function should_delete_node_and_return_empty_array()
     {
-        VCR::turnOn();
         VCR::insertCassette('should_create_node_and_return_object_with_node_id.json');
         $client = new Client();
         $client->setOption('base_url', $this->url);
         $client->authenticate($this->username, $this->password, 'http_drupal_login');
         $nodeResponse = $client->api('nodes')->createNode($this->test_node_params());
         $this->assertObjectHasAttribute('nid', $nodeResponse);
-        VCR::eject();
-        VCR::turnOff();
 
-        VCR::turnOn();
         VCR::insertCassette('should_delete_node_and_return_empty_array.json');
         $client = new Client();
         $client->setOption('base_url', $this->url);
         $client->authenticate($this->username, $this->password, 'http_drupal_login');
         $results = $client->api('nodes')->deleteNode($nodeResponse);
         $this->assertEmpty($results);
-        VCR::eject();
-        VCR::turnOff();
     }
 
     /**
@@ -56,16 +46,12 @@ class NodeTest extends BaseTest {
      */
     public function should_take_exception_when_test_sets_field_format_that_doesnt_exist()
     {
-        VCR::turnOn();
-        VCR::insertCassette('should_take_exception_when_test_sets_field_format_that_doesnt_exist.json');
         $client = new Client();
         $client->setOption('base_url', $this->url);
         $client->authenticate($this->username, $this->password, 'http_drupal_login');
         $nodeRequest = $client->api('nodes');
         $nodeRequest->setDrupalFilterFormat('non_existent');
         $results = $nodeRequest->createNode($this->test_node_params());
-        VCR::eject();
-        VCR::turnOff();
     }
 
     /**
@@ -76,16 +62,12 @@ class NodeTest extends BaseTest {
      */
     public function should_take_exception_when_incorrect_credentials_are_provided()
     {
-        VCR::turnOn();
-        VCR::insertCassette('should_take_exception_when_incorrect_credentials_are_provided.json');
         $client = new Client();
         $client->setOption('base_url', $this->url);
         $pw = 'wrong';
         $client->authenticate($this->username, $pw, 'http_drupal_login');
         $nodeRequest = $client->api('nodes');
         $results = $nodeRequest->createNode($this->test_node_params());
-        VCR::eject();
-        VCR::turnOff();
     }
 
     /**
@@ -96,14 +78,6 @@ class NodeTest extends BaseTest {
      */
     public function should_take_exception_when_too_many_terms_are_provided()
     {
-       // Having trouble with URL encoding match: https://github.com/php-vcr/php-vcr/issues/66
-       VCR::configure()
-         ->addRequestMatcher('url', function ($first, $second)
-         {
-             return $second->getPath() == $first->getPath();
-         });
-        VCR::turnOn();
-        VCR::insertCassette('should_take_exception_when_too_many_terms_are_provided.json');
         $client = new Client();
         $client->setOption('base_url', $this->url);
         $client->authenticate($this->username, $this->password, 'http_drupal_login');
@@ -111,8 +85,6 @@ class NodeTest extends BaseTest {
         $node = $this->test_node_params();
         $node->field_tags = 'Tag one, Tag two';
         $results = $nodeRequest->createNode($node);
-        VCR::eject();
-        VCR::turnOff();
     }
 
 }
