@@ -13,7 +13,11 @@ if ((!$loader = includeIfExists(__DIR__.'/../vendor/autoload.php')) && (!$loader
         'php composer.phar install'.PHP_EOL);
 }
 
-\VCR\VCR::configure()->setStorage('json')->setCassettePath(__DIR__ .'/../test/fixtures');
+\VCR\VCR::configure()
+    ->setStorage('json')
+    ->setCassettePath(__DIR__ .'/../test/fixtures')
+    // Exclude 'headers' from request matching.
+    ->enableRequestMatchers(array('method', 'url', 'host', 'body', 'post_fields', 'query_string'));
 
 $loader->add('Kirschbaum\DrupalBehatRemoteAPIDriver\Tests', __DIR__);
 
